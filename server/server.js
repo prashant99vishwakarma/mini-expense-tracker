@@ -1,11 +1,14 @@
-const express = require("express");
-const cors = require("cors");
-const db = require("./db");
+import express from "express";
+import cors from "cors";
+import expenseRoutes from "./routes/expenseRoutes.js";
+import db from "./config/db.js";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.use("/api/expenses", expenseRoutes);
 
 db.connect((err) => {
     if (err) {
@@ -15,14 +18,11 @@ db.connect((err) => {
     }
 });
 
-
 // GET ALL EXPENSES
 app.get("/expenses", (req, res) => {
-
     const sql = "SELECT * FROM expenses ORDER BY expense_date DESC";
 
     db.query(sql, (err, results) => {
-
         if (err) {
             return res.status(500).json({
                 error: "Failed to fetch expenses"
@@ -33,10 +33,8 @@ app.get("/expenses", (req, res) => {
     });
 });
 
-
 // ADD EXPENSE
 app.post("/expenses", (req, res) => {
-
     const {
         title,
         amount,
@@ -72,7 +70,6 @@ app.post("/expenses", (req, res) => {
     ];
 
     db.query(sql, values, (err, result) => {
-
         if (err) {
             return res.status(500).json({
                 error: "Failed to add expense"
@@ -86,10 +83,8 @@ app.post("/expenses", (req, res) => {
     });
 });
 
-
 // UPDATE EXPENSE
 app.put("/expenses/:id", (req, res) => {
-
     const id = req.params.id;
 
     const {
@@ -132,7 +127,6 @@ app.put("/expenses/:id", (req, res) => {
     ];
 
     db.query(sql, values, (err, result) => {
-
         if (err) {
             return res.status(500).json({
                 error: "Failed to update expense"
@@ -151,16 +145,13 @@ app.put("/expenses/:id", (req, res) => {
     });
 });
 
-
 // DELETE EXPENSE
 app.delete("/expenses/:id", (req, res) => {
-
     const id = req.params.id;
 
     const sql = "DELETE FROM expenses WHERE id = ?";
 
     db.query(sql, [id], (err, result) => {
-
         if (err) {
             return res.status(500).json({
                 error: "Failed to delete expense"
@@ -179,7 +170,6 @@ app.delete("/expenses/:id", (req, res) => {
     });
 });
 
-
 // TEST ROUTE
 app.get("/", (req, res) => {
     res.json({
@@ -187,8 +177,7 @@ app.get("/", (req, res) => {
     });
 });
 
-
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
