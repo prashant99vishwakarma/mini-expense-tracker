@@ -1,7 +1,7 @@
 import { useState } from "react";
 import EditExpense from "./EditExpense";
 
-const API_URL = "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function ExpenseList({ expenses, onExpenseChanged }) {
 
