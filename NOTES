@@ -1,0 +1,358 @@
+========================================
+        EXPENSE TRACKER ROADMAP
+========================================
+
+TECH STACK
+----------
+Frontend  : React + Tailwind CSS
+Backend   : Node.js + Express.js
+Database  : MySQL
+
+
+========================================
+PHASE 1 — MYSQL DATABASE
+========================================
+
+GOAL:
+Build and understand the database independently.
+
+TASKS:
+1. Create database
+2. Create expenses table
+3. Understand data types
+4. Primary Key
+5. AUTO_INCREMENT
+6. NOT NULL
+7. DEFAULT
+8. INSERT
+9. SELECT
+10. WHERE
+11. UPDATE
+12. DELETE
+13. ORDER BY
+14. LIMIT
+
+TABLE:
+
+expenses
+---------
+id
+title
+amount
+category
+description
+expense_date
+created_at
+
+PRACTICE:
+- Insert multiple expenses
+- Display all expenses
+- Find expense by id
+- Find expenses by category
+- Update an expense
+- Delete an expense
+- Sort expenses
+- Limit results
+
+DONE WHEN:
+I can comfortably perform CRUD operations using SQL.
+
+
+========================================
+PHASE 2 — NODE.JS + EXPRESS
+========================================
+
+GOAL:
+Build a basic backend server and understand REST APIs.
+
+TASKS:
+1. Create Node project
+2. package.json
+3. Install Express
+4. Create server
+5. app.listen()
+6. GET route
+7. POST route
+8. PUT route
+9. DELETE route
+10. req.params
+11. req.query
+12. req.body
+13. res.json()
+14. res.status()
+15. express.json()
+16. Middleware
+17. CORS
+
+API STRUCTURE:
+
+GET    /api/expenses
+GET    /api/expenses/:id
+POST   /api/expenses
+PUT    /api/expenses/:id
+DELETE /api/expenses/:id
+
+PRACTICE:
+- Create basic routes
+- Send JSON responses
+- Receive data from requests
+- Test APIs using Postman
+
+DONE WHEN:
+I understand how an Express API receives requests
+and sends responses.
+
+
+========================================
+PHASE 3 — NODE.JS + MYSQL
+========================================
+
+GOAL:
+Connect the backend to the database and build
+a complete CRUD API.
+
+TASKS:
+1. Install mysql2
+2. Connect Node to MySQL
+3. Create connection pool
+4. Execute SQL from Node
+5. GET expenses from MySQL
+6. INSERT expense
+7. UPDATE expense
+8. DELETE expense
+9. Prepared statements
+10. Error handling
+11. dotenv
+12. Environment variables
+
+FLOW:
+
+Express
+   ↓
+MySQL Query
+   ↓
+MySQL Database
+   ↓
+Result
+   ↓
+Express
+   ↓
+JSON Response
+
+PRACTICE:
+- GET all expenses
+- GET expense by ID
+- POST expense
+- PUT expense
+- DELETE expense
+- Test everything in Postman
+
+DONE WHEN:
+The entire Expense Tracker backend works
+without React.
+
+
+========================================
+PHASE 4 — REACT + TAILWIND CSS
+========================================
+
+GOAL:
+Build the frontend UI independently.
+
+TASKS:
+1. React project setup
+2. Components
+3. JSX
+4. useState
+5. useEffect
+6. Forms
+7. Form inputs
+8. Event handling
+9. map()
+10. Conditional rendering
+11. Tailwind CSS
+12. Flexbox
+13. Grid
+14. Responsive design
+
+COMPONENTS:
+
+App
+├── Navbar
+├── ExpenseForm
+├── ExpenseList
+│   └── ExpenseCard
+├── FilterBar
+└── ExpenseSummary
+
+UI:
+
+- Navbar
+- Add Expense form
+- Expense cards
+- Edit button
+- Delete button
+- Category dropdown
+- Total spending section
+
+FIRST:
+Use dummy data.
+
+DONE WHEN:
+The frontend looks and behaves correctly
+using dummy data without the backend.
+
+
+========================================
+PHASE 5 — CONNECT FRONTEND + BACKEND
+========================================
+
+GOAL:
+Turn the separate frontend and backend into
+one complete full-stack application.
+
+FLOW:
+
+React
+  ↓
+fetch()
+  ↓
+Express API
+  ↓
+MySQL
+  ↓
+Express
+  ↓
+JSON
+  ↓
+React
+
+
+TASKS:
+1. GET expenses
+2. Display database data
+3. POST new expense
+4. Update UI after adding
+5. DELETE expense
+6. Edit expense
+7. PUT updated expense
+8. Loading state
+9. Error handling
+10. Empty state
+
+PRACTICE:
+
+Add expense
+    ↓
+React
+    ↓
+POST request
+    ↓
+Express
+    ↓
+MySQL
+    ↓
+Database updated
+    ↓
+React displays new expense
+
+
+DONE WHEN:
+I can add, view, edit and delete expenses
+through the React UI and the changes are
+actually stored in MySQL.
+
+
+========================================
+PHASE 6 — FEATURES + POLISH
+========================================
+
+GOAL:
+Make the project portfolio-ready.
+
+FEATURES:
+
+1. Category filtering
+2. Search expenses
+3. Total spending
+4. Spending by category
+5. GROUP BY
+6. SUM()
+7. COUNT()
+8. Dashboard statistics
+9. Edit modal
+10. Pagination
+11. Better error messages
+12. Loading indicators
+13. Responsive design
+14. Form validation
+15. .env
+16. .gitignore
+17. GitHub
+18. Deployment
+
+
+FINAL FLOW:
+
+              EXPENSE TRACKER
+                     |
+          ┌──────────┴──────────┐
+          ↓                     ↓
+      FRONTEND               BACKEND
+          ↓                     ↓
+ React + Tailwind       Node.js + Express
+                                |
+                                ↓
+                              MySQL
+                                |
+                                ↓
+                         Expenses Table
+
+
+FINAL PROJECT SHOULD SUPPORT:
+
+✓ Add expense
+✓ View expenses
+✓ Edit expense
+✓ Delete expense
+✓ Search
+✓ Filter
+✓ Total spending
+✓ Category statistics
+✓ Responsive UI
+✓ REST API
+✓ MySQL database
+✓ Error handling
+✓ Environment variables
+
+
+========================================
+          LEARNING RULE
+========================================
+
+DO NOT BUILD ALL PHASES AT ONCE.
+
+Phase 1
+  ↓
+Finish + understand
+  ↓
+Phase 2
+  ↓
+Finish + understand
+  ↓
+Phase 3
+  ↓
+Finish + understand
+  ↓
+Phase 4
+  ↓
+Finish + understand
+  ↓
+Phase 5
+  ↓
+Finish + understand
+  ↓
+Phase 6
+
+ONE PHASE AT A TIME.
+========================================
